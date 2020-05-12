@@ -1,0 +1,92 @@
+footer {
+  font-size: 14px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 auto 0 5px;
+  font-size: 55px;
+  font-weight: bold;
+  display: inline;
+}
+
+h3 {
+  margin: 20px 0 0 20px;
+}
+
+i {
+  font-size: 35px;
+  margin: 0 auto;
+}
+
+h1 i {
+  margin: 0 15px 0 0px;
+}
+
+a,
+p {
+  font-size: 20px;
+  line-height: 30px;
+  margin: 0 auto;
+}
+
+#date,
+small {
+  font-size: 18px;
+  margin: 0 0 0 5px;
+}
+
+h1,
+h3,
+i,
+p,
+a {
+  color: #142850;
+}
+
+.btn-success {
+  margin: 0 0 0 9px;
+}
+
+.btn-info {
+  margin: 0 0 0 20px;
+}
+
+.form-control {
+  margin: 0 0 0 12px;
+}
+
+.row {
+  margin: 10px 0;
+}
+
+.forecast {
+  border-radius: 10px;
+  margin: 10px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.forecast-col:hover {
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.weather-app {
+  font-family: "Baloo Bhaina 2", cursive;
+  margin: 20px auto;
+  max-width: 700px;
+  border-radius: 8px;
+  padding: 5px 10px 10px 10px;
+  background-image: linear-gradient(
+    0,
+    rgba(143, 211, 244, 0.9) 0%,
+    rgba(132, 250, 176, 0.9) 100%
+  );
+}
+
+.units {
+  display: inline;
+  margin: 0 5px;
+  position: relative;
+  top: -22px;
+}

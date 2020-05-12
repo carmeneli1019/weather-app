@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/4658a0aca6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="weather-app">
+        <!--
+        <div class="row">
+          <div class="col-auto">
+            <a href="#">Lisbon</a>
+          </div>
+          <div class="col-auto">
+            <a href="#">Madrid</a>
+          </div>
+          <div class="col-auto">
+            <a href="#">Caracas</a>
+          </div>
+          <div class="col-auto">
+            <a href="#">Paris</a>
+          </div>
+        </div>
+        -->
+
+        <form id="search-city-form">
+          <div class="row no-gutters">
+            <div class="col-6">
+              <input
+                type="search"
+                class="form-control shadow-sm"
+                placeholder="Enter a city..."
+                autocomplete="off"
+                id="city-input"
+              />
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-info shadow-sm">
+                Search
+              </button>
+            </div>
+            <div class="col-auto">
+              <button
+                id="current-button"
+                type="reset"
+                class="btn btn-success shadow-sm"
+              >
+                Current
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <div class="row">
+          <h3 id="city"></h3>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h1>
+              <span id="weather-icon"></span> <span id="temperature"></span>
+            </h1>
+            <p class="units">
+              ºC
+              <!--
+                <a href="#" id="celsius-link">ºC</a>
+               |
+            <a href="#" id="fahrenheit-link">ºF</a>
+             -->
+            </p>
+            <p id="date"></p>
+            <p><small id="description"></small></p>
+          </div>
+
+          <div class="col">
+            <p>Wind: <span id="wind"></span></p>
+            <p>Humidity: <span id="humidity"></span></p>
+            <p>Feels like: <span id="feels-like"></span></p>
+          </div>
+        </div>
+
+        <!--
+        <div class="row forecast shadow-sm">
+          <div class="col forecast-col">
+            <div class="row"><p>Wednesday</p></div>
+            <div class="row"><i class="fas fa-cloud"></i></div>
+            <div class="row"><p>15 ºC</p></div>
+          </div>
+
+          <div class="col forecast-col">
+            <div class="row"><p>Thursday</p></div>
+            <div class="row"><i class="fas fa-cloud"></i></div>
+            <div class="row"><p>17 ºC</p></div>
+          </div>
+          <div class="col forecast-col">
+            <div class="row"><p>Friday</p></div>
+            <div class="row"><i class="fas fa-cloud-showers-heavy"></i></div>
+            <div class="row"><p>16 ºC</p></div>
+          </div>
+          <div class="col forecast-col">
+            <div class="row"><p>Saturday</p></div>
+            <div class="row"><i class="fas fa-cloud-sun-rain"></i></div>
+            <div class="row"><p>15 ºC</p></div>
+          </div>
+          <div class="col forecast-col">
+            <div class="row"><p>Sunday</p></div>
+            <div class="row"><i class="fas fa-sun"></i></div>
+            <div class="row"><p>14 ºC</p></div>
+          </div>
+          <div class="col forecast-col">
+            <div class="row"><p>Monday</p></div>
+            <div class="row"><i class="fas fa-sun"></i></div>
+            <div class="row">
+              <p>16 ºC</p>
+            </div>
+          </div>
+        </div>
+        -->
+      </div>
+      <footer>Coded by Carmen Rosales</footer>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>
