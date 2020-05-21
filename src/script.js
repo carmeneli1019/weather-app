@@ -3,7 +3,8 @@ function formatString(string) {
   return string;
 }
 
-function formatDate(date) {
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -13,8 +14,6 @@ function formatDate(date) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-
-  let dayNumber = date.getDate();
 
   let weekDays = [
     "Sunday",
@@ -28,29 +27,12 @@ function formatDate(date) {
 
   let weekDay = weekDays[date.getDay()];
 
-  let months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
-  let month = months[date.getMonth()];
-
-  return `${weekDay}, ${month} ${dayNumber} ${hours}:${minutes}`;
+  return `Last updated: ${weekDay}, ${hours}:${minutes}`;
 }
 
 function displayWeather(response) {
-  let currentDate = new Date();
-  document.querySelector("#date").innerHTML = formatDate(currentDate);
+  let timestamp = response.data.dt * 1000;
+  document.querySelector("#date").innerHTML = formatDate(timestamp);
 
   let city = response.data.name;
   document.querySelector("#city").innerHTML = city;
