@@ -5,52 +5,46 @@ footer a {
 }
 
 h1 {
-  margin: 0 auto 0 5px;
   font-size: 55px;
   font-weight: bold;
   display: inline;
+  line-height: 1;
+}
+
+h1 i {
+  margin: 0 15px 0 0px;
+  font-size: 35px;
 }
 
 h3 {
   margin: 20px 0 0 20px;
 }
 
-i {
-  font-size: 35px;
-  margin: 0 auto;
-}
-
-h1 i {
-  margin: 0 15px 0 0px;
-}
-
-a,
 p {
   font-size: 20px;
   line-height: 30px;
   margin: 0 auto;
 }
 
+h1,
+h3,
+i,
+p {
+  color: #142850;
+}
+
 #date,
-small {
+#description {
   font-size: 18px;
   margin: 0 0 0 5px;
 }
 
-h1,
-h3,
-i,
-p,
-a {
-  color: #142850;
-}
-
 .btn-success {
-  margin: 0 0 0 9px;
+  margin: 0 0 0 10px;
 }
 
 .btn-info {
-  margin: 0 0 0 20px;
+  margin: 0 0 0 22px;
 }
 
 .form-control {
@@ -87,7 +81,8 @@ a {
 
 .units {
   display: inline;
-  margin: 0 5px;
   position: relative;
-  top: -22px;
+  top: -24px;
+  left: -5px;
+  margin: 0;
 }
