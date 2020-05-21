@@ -1,5 +1,6 @@
-footer {
-  font-size: 14px;
+footer,
+footer a {
+  font-size: 16px;
   text-align: center;
 }
 
