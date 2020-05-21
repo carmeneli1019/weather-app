@@ -33,10 +33,14 @@ p {
   color: #142850;
 }
 
-#date,
-#description {
-  font-size: 18px;
-  margin: 0 0 0 5px;
+.active {
+  cursor: default;
+  color: #142850;
+}
+
+.active:hover {
+  text-decoration: none;
+  color: #142850;
 }
 
 .btn-success {
@@ -47,12 +51,14 @@ p {
   margin: 0 0 0 22px;
 }
 
-.form-control {
-  margin: 0 0 0 12px;
+#date,
+#description {
+  font-size: 18px;
+  margin: 0 0 0 5px;
 }
 
-.row {
-  margin: 10px 0;
+.form-control {
+  margin: 0 0 0 12px;
 }
 
 .forecast {
@@ -64,6 +70,10 @@ p {
 .forecast-col:hover {
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.3);
+}
+
+.row {
+  margin: 10px 0;
 }
 
 .weather-app {
@@ -80,9 +90,7 @@ p {
 }
 
 .units {
-  display: inline;
   position: relative;
   top: -24px;
   left: -5px;
-  margin: 0;
 }
