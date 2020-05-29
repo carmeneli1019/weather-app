@@ -5,15 +5,6 @@ function formatString(string) {
 
 function formatDate(timestamp) {
   let date = new Date(timestamp);
-  let hours = date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
 
   let weekDays = [
     "Sunday",
@@ -26,8 +17,45 @@ function formatDate(timestamp) {
   ];
 
   let weekDay = weekDays[date.getDay()];
+  let time = formatTime(timestamp);
+  return `Last updated: ${weekDay}, ${time}`;
+}
 
-  return `Last updated: ${weekDay}, ${hours}:${minutes}`;
+function formatTime(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+}
+
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#weather-forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+  let temp = null;
+  let time = null;
+  let weatherIcon = null;
+
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    time = formatTime(forecast.dt * 1000);
+    weatherIcon = weatherIcons[forecast.weather[0].main].iconHTML;
+    temp = Math.round(forecast.main.temp);
+
+    forecastElement.innerHTML += `
+            <div class="col forecast-col">
+            <p>${time}</p>
+            ${weatherIcon}
+            <p><strong>${temp}º</strong></p>
+          </div>
+          `;
+  }
 }
 
 function displayWeather(response) {
@@ -80,6 +108,9 @@ function searchCity(city) {
     let units = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(displayWeather);
+
+    apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
+    axios.get(apiUrl).then(displayForecast);
   }
 }
 
@@ -96,6 +127,9 @@ function handlePosition(position) {
   let longitude = position.coords.longitude;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayWeather);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function searchCurrentLocation() {
