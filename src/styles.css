@@ -43,14 +43,6 @@ p {
   color: rgba(20, 40, 80, 1);
 }
 
-.btn-success {
-  margin: 0 0 0 10px;
-}
-
-.btn-info {
-  margin: 0 0 0 22px;
-}
-
 #date,
 #description {
   font-size: 18px;
@@ -95,4 +87,15 @@ i {
   position: relative;
   top: -24px;
   left: -5px;
+}
+
+.search-button {
+  margin: 0 0 0 15px;
+}
+
+#search-city-form i {
+  font-size: 22px;
+}
+#search-city-form i:hover {
+  color: rgba(20, 40, 80, 0.6);
 }
